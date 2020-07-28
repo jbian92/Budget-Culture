@@ -28,6 +28,10 @@ genres = [
 
 # -- Routes --
 @app.route('/')
+@app.route('/home')
+def home():
+    return render_template('home.html', time = datetime.now())
+
 @app.route('/homepage')
 def homepage():
     return render_template('homepage.html', genres = genres, time = datetime.now())
