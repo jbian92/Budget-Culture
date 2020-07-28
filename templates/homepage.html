@@ -19,221 +19,118 @@
     border-color: #2F3E48;
 }
 </style>
+<ul>
+{% for genre in genres %}
+    <h3> {{genre.capitalize()}} </h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-4">
+                                        <div class="card text-center border-secondary mb-3" style="width: 300px;margin: auto;">
+                                            <img src="images/a.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h4 class="card-title"> title 1 </h4>
+                                                <p class="card-text"> text </p>
+                                                <form method="post" action="/description"> 
+                                                    <button type="submit" class="btn btn-default">Read More</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
 
-<h3> Outdoors </h3>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px;margin: auto;">
-                                        <img src="images/a.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title 1 </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
+                                    <div class="col-sm-12 col-lg-4">
+                                        <div class="card text-center border-secondary mb-3" style="width: 300px;margin: auto;">
+                                            <img src="images/b.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h4 class="card-title"> title </h4>
+                                                <p class="card-text"> text </p>
+                                                <form method="post" action="/description"> 
+                                                    <button type="submit" class="btn btn-default">Read More</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-lg-4">
+                                        <div class="card text-center border-secondary mb-3" style="width: 300px;margin: auto;">
+                                            <img src="images/c.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h4 class="card-title"> title </h4>
+                                                <p class="card-text"> text </p>
+                                                <form method="post" action="/description"> 
+                                                    <button type="submit" class="btn btn-default">Read More</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px;margin: auto;">
-                                        <img src="images/b.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-4">
+                                        <div class="card text-center border-secondary mb-3" style="width: 300px;margin: auto;">
+                                            <img src="images/d.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h4 class="card-title"> title 2 </h4>
+                                                <p class="card-text"> text </p>
+                                                <form method="post" action="/description"> 
+                                                    <button type="submit" class="btn btn-default">Read More</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px;margin: auto;">
-                                        <img src="images/c.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
+                                    <div class="col-sm-12 col-lg-4">
+                                        <div class="card text-center textborder-secondary mb-3" style="width: 300px; margin: auto;">
+                                            <img src="images/e.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h4 class="card-title"> title </h4>
+                                                <p class="card-text"> text </p>
+                                                <form method="post" action="/description"> 
+                                                    <button type="submit" class="btn btn-default">Read More</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-lg-4">
+                                        <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;">
+                                            <img src="images/f.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h4 class="card-title"> title </h4>
+                                                <p class="card-text"> text </p>
+                                                <form method="post" action="/description"> 
+                                                    <button type="submit" class="btn btn-default">Read More</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px;margin: auto;">
-                                        <img src="images/d.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title 2 </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center textborder-secondary mb-3" style="width: 300px; margin: auto;">
-                                        <img src="images/e.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;">
-                                        <img src="images/f.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
     </div>
-</div>
+{% endfor %}
+</ul>
 
-<p></p>
-<h3> Indoors </h3>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;">
-                                        <img src="images/a.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title 1 </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+    <p></p>
 
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;">
-                                        <img src="images/b.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;">
-                                        <img src="images/c.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;">
-                                        <img src="images/d.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title 2 </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;">
-                                        <img src="images/e.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;">
-                                        <img src="images/f.jpg" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title"> title </h4>
-                                            <p class="card-text"> text </p>
-                                            <form method="post" action="/description"> 
-                                                <button type="submit" class="btn btn-default">Read More</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}
