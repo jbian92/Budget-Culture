@@ -42,6 +42,10 @@ types = list(genres.keys())
 
 # -- Routes --
 @app.route('/')
+@app.route('/home')
+def home():
+    return render_template('home.html', time = datetime.now())
+
 @app.route('/homepage')
 def homepage():
     set_carvars()
