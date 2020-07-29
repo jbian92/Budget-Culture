@@ -57,8 +57,8 @@ header.masthead .masthead-content .masthead-subheading {
 .circular--landscape {
   display: inline-block;
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   border-radius: 50%;
 }
@@ -71,4 +71,12 @@ header.masthead .masthead-content .masthead-subheading {
 
 .circular--square {
   border-radius: 50%;
+}
+
+.activity-row {
+    border: 20px solid #be93e6;
+}
+
+.row-space {
+    border: 40px solid #be93e6;
 }
