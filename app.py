@@ -61,12 +61,29 @@ def set_genre_vars():
 
 
 @app.route('/searchdescription', methods = ['POST', 'GET'])
-def description():
+def searchdescription():
     if request.method == 'POST':
         name = request.form["place_name"]
+        index = 0
         for place_type in places:
             for place in places[place_type]:
                 if place["name"] == name:
-                    return render_template('description.html', place_type = place_type, time = datetime.now())
+                    photo = photos[place_type][index]
+                    return render_template('description.html', place_type = place_type, place = place, photo = photo, time = datetime.now())
+                index += 1
+            index = 0
+    else:
+        return "error"
+
+
+@app.route('/description', methods = ['POST', 'GET'])
+def description():
+    if request.method == 'POST':
+        place_type = request.form["type"]
+        index = int(request.form["index"])
+        place = places[place_type][index]
+        photo = request.form["photo"]
+        
+        return render_template('description.html', place_type = place_type, place = place, photo = photo, time = datetime.now())
     else:
         return "error"
