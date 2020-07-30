@@ -14,72 +14,77 @@
 }
 
 .btn-default {
-    background-color: #A762D5;
-    color:#FFF;
-    border-color: #2F3E48;
+    background-color: #f2e2f4;
+    color: #A762D5;
+    border-color: #A762D5;
+}
+
+#genres {
+    margin-top: 2%;
 }
 </style>
 
 <ul>
 {% for type in types %}
-    <h3> {{genres[type]["title"]}} </h3> <!-- genre title -->
-    <div class="container-fluid"> <!-- open carousel container -->
-        <div class="row"> <!-- open carousel row -->
-            <div class="col-sm-12"> <!-- open carousel col -->
-                <div id= {{genres[type]["carid"]}} class="carousel slide" data-ride="carousel" data-interval="false"> <!-- open carousel -->
-                    <div class="carousel-inner"> <!-- open carousel inner (not arrows) -->
+    <div id="genres"> <!-- open genres -->
+        <h3> {{genres[type]["title"]}} </h3> <!-- genre title -->
+        <div class="container-fluid"> <!-- open carousel container -->
+            <div class="row"> <!-- open carousel row -->
+                <div class="col-sm-12"> <!-- open carousel col -->
+                    <div id= {{genres[type]["carid"]}} class="carousel slide" data-ride="carousel" data-interval="false"> <!-- open carousel -->
+                        <div class="carousel-inner"> <!-- open carousel inner (not arrows) -->
 
-                            <div class="carousel-item active"> <!-- open carousel item (3 cards) -->
-                                <div class="container"> <!-- open carousel item container -->
-                                    <div class="row"> <!-- open carousel item row -->
+                                <div class="carousel-item active"> <!-- open carousel item (3 cards) -->
+                                    <div class="container"> <!-- open carousel item container -->
+                                        <div class="row"> <!-- open carousel item row -->
 
-                                        {% for place in places[type] %}
-                                            <div class="col-sm-12 col-lg-4"> <!-- open card col -->
-                                                <div class="card text-center border-secondary mb-3 h-100" style="width: 300px; margin: auto;"> <!-- open card -->
-                                                    <!-- <img src="images/a.jpg" class="card-img-top"> -->
-                                                    <img src= {{photos[type][loop.index - 1]}} class="card-img-top" style="height: 175px;">
-                                                    <div class="card-body"> <!-- open card body -->
-                                                        <h4 class="card-title"> {{place["name"]}} </h4>
-                                                        <form method="post" action="/description"> 
-                                                            <input type="hidden" name="type" value= {{type}}>
-                                                            <input type="hidden" name="index" value= {{loop.index - 1}}>
-                                                            <input type="hidden" name="photo" value= {{photos[type][loop.index - 1]}}>
-                                                            <button type="submit" class="btn btn-default">Read More</button>
-                                                        </form>
-                                                    </div> <!-- close card body -->
-                                                </div> <!-- close card -->
-                                            </div> <!-- close card col -->
+                                            {% for place in places[type] %}
+                                                <div class="col-sm-12 col-lg-4"> <!-- open card col -->
+                                                    <div class="card text-center border-secondary mb-3 h-100" style="width: 300px; margin: auto;"> <!-- open card -->
+                                                        <!-- <img src="images/a.jpg" class="card-img-top"> -->
+                                                        <img src= {{photos[type][loop.index - 1]}} class="card-img-top" style="height: 175px;">
+                                                        <div class="card-body"> <!-- open card body -->
+                                                            <h4 class="card-title"> {{place["name"]}} </h4>
+                                                            <form method="post" action="/description"> 
+                                                                <input type="hidden" name="type" value= {{type}}>
+                                                                <input type="hidden" name="index" value= {{loop.index - 1}}>
+                                                                <input type="hidden" name="photo" value= {{photos[type][loop.index - 1]}}>
+                                                                <button type="submit" class="btn btn-default rounded-pill">See More</button>
+                                                            </form>
+                                                        </div> <!-- close card body -->
+                                                    </div> <!-- close card -->
+                                                </div> <!-- close card col -->
 
-                                            {% if ((loop.index % 3) == 0) or ((places[type].index(place)) == (((places[type])|length - 1))) %}
-                                                </div> <!-- close carousel item row -->
-                                                </div> <!-- close carousel item container -->
-                                                </div> <!-- close carousel item -->
-                                                {% if ((places[type])|length) > loop.index %}
-                                                    <div class="carousel-item"> <!-- open carousel item (3 cards) -->
-                                                    <div class="container"> <!-- open carousel item container -->
-                                                    <div class="row"> <!-- open carousel item row -->
+                                                {% if ((loop.index % 3) == 0) or ((places[type].index(place)) == (((places[type])|length - 1))) %}
+                                                    </div> <!-- close carousel item row -->
+                                                    </div> <!-- close carousel item container -->
+                                                    </div> <!-- close carousel item -->
+                                                    {% if ((places[type])|length) > loop.index %}
+                                                        <div class="carousel-item"> <!-- open carousel item (3 cards) -->
+                                                        <div class="container"> <!-- open carousel item container -->
+                                                        <div class="row"> <!-- open carousel item row -->
+                                                    {% endif %}
                                                 {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
+                                            {% endfor %}
 
-                    </div> <!-- close carousel inner -->
-                    <!-- arrow buttons -->
-                    <a class="carousel-control-prev" href= {{genres[type]["carhref"]}} role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href= {{genres[type]["carhref"]}} role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                        </div> <!-- close carousel inner -->
+                        <!-- arrow buttons -->
+                        <a class="carousel-control-prev" href= {{genres[type]["carhref"]}} role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href= {{genres[type]["carhref"]}} role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
 
-                </div> <!-- close carousel -->
-            </div> <!-- close carousel col -->
-        </div> <!-- close carousel row -->
-    </div> <!-- close carousel container -->
+                    </div> <!-- close carousel -->
+                </div> <!-- close carousel col -->
+            </div> <!-- close carousel row -->
+        </div> <!-- close carousel container -->
+    </div> <!-- close genres -->
 {% endfor %}
 </ul>
 
-    <p></p>
 
 {% endblock %}

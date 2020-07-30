@@ -86,5 +86,13 @@ header.masthead .masthead-content .masthead-subheading {
 #description_photo {
     height: 300px;
     width: auto;
-    border: 
+}
+
+#back {
+    margin-left: 2%;
+}
+
+.content {
+    margin-top: 2%;
+    margin-bottom: 2%;
 }

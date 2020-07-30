@@ -4,12 +4,23 @@
 
 {% block body %}
 
-<div class="jumbotron" style="background-color: #f2e2f4">
-    <h1 class="display-4">{{place["name"]}}</h1>
-    <p class="lead">{{place["vicinity"]}}</p>
-    <img class="shadow rounded" id="description_photo" src= {{photo}}>
-    <hr class="my-4">
-    <p>...</p>
+<div class="content">
+    <div class="jumbotron" style="background-color: #f2e2f4; margin-top: -2%;">
+        <h1 class="display-4">{{place["name"]}}</h1>
+        <p class="lead">{{place["vicinity"]}}</p>
+        <img class="shadow-lg rounded" id="description_photo" src= {{photo}}>
+        <hr class="my-4">
+        <p>Rating: {{place["rating"]}}  |  Ratings: {{place["user_ratings_total"]}}</p>
+        {% if "opening_hours" in place.keys() %}
+            {% if place["opening_hours"]["open_now"] %}
+                <p>Open Now</p>
+            {% else %}
+                <p>NOT Open</p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <a href="homepage" class="btn btn-primary btn-xl mt-5" id="back">Back to Browse</a>
 </div>
 
 {% endblock %}

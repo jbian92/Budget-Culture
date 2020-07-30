@@ -10,6 +10,7 @@ from model import getPlaces, getPhotos
 app = Flask(__name__)
 
 app.config['PLACES_KEY'] = "AIzaSyB_VVeMFaOFWa9_AuOjHX-zy6N0Y9txPoE"
+app.config['YELP_KEY'] = "B-bIVjHtlstWwHF94STEIge91q4EZ6rjFM1Czm9ehUlprtY2dY-hZIM_P7ky5AtEY7G64RmHoXaSRwAxWwExhzv1EbWa_uvqMFWJxudY-7Cjhr6swG3UDwry7j8jX3Yx"
 
 
 # -- Variables --
