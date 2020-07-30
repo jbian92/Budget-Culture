@@ -39,6 +39,8 @@ genres = {
 }
 
 types = list(genres.keys())
+places = getPlaces(types, app.config['PLACES_KEY'])
+photos = getPhotos(places, app.config['PLACES_KEY'])
 
 # -- Routes --
 @app.route('/')
@@ -49,8 +51,6 @@ def home():
 @app.route('/homepage')
 def homepage():
     set_genre_vars()
-    places = getPlaces(types, app.config['PLACES_KEY'])
-    photos = getPhotos(places, app.config['PLACES_KEY'])
     
     return render_template('homepage.html', genres = genres, types = types, places = places, photos = photos, time = datetime.now())
 
@@ -60,9 +60,13 @@ def set_genre_vars():
         genres[genre]["carhref"] = "#carouselExampleControls" + str(types.index(genre))
 
 
-@app.route('/description', methods = ['POST', 'GET'])
+@app.route('/searchdescription', methods = ['POST', 'GET'])
 def description():
     if request.method == 'POST':
-        return render_template('description.html', time = datetime.now())
+        name = request.form["place_name"]
+        for place_type in places:
+            for place in places[place_type]:
+                if place["name"] == name:
+                    return render_template('description.html', place_type = place_type, time = datetime.now())
     else:
         return "error"
