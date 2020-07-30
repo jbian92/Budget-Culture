@@ -35,7 +35,8 @@
                                         {% for place in places[type] %}
                                             <div class="col-sm-12 col-lg-4"> <!-- open card col -->
                                                 <div class="card text-center border-secondary mb-3" style="width: 300px; margin: auto;"> <!-- open card -->
-                                                    <img src="images/a.jpg" class="card-img-top">
+                                                    <!-- <img src="images/a.jpg" class="card-img-top"> -->
+                                                    <img src= {{photos[type][loop.index - 1]}} class="card-img-top">
                                                     <div class="card-body"> <!-- open card body -->
                                                         <h4 class="card-title"> {{place["name"]}} </h4>
                                                         <p class="card-text"> text </p>

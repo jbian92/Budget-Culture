@@ -1,19 +1,30 @@
 import requests
 
-def getPlaces(genres, key):
+def getPlaces(placeTypes, key):
     location = "40.7489,-73.9680" # united nations
     radius = 16100 # about 10 miles
     places = {}
 
-    for genre in genres:
-        request_url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={location}&radius={radius}&type={genre}&key={key}"
+    for placeType in placeTypes:
+        request_url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={location}&radius={radius}&type={placeType}&key={key}"
         response = requests.get(request_url).json()
         results = response["results"]
-        places.update({genre: results})
+        places.update({placeType: results})
     
     return places
 
+def getPhotos(places, key):
+    maxwidth = 300 # based on card width in homepage.html
+    photos = {}
 
-    # https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.7489,-73.9680&radius=50000&type=movie_theater&key=AIzaSyB_VVeMFaOFWa9_AuOjHX-zy6N0Y9txPoE
-
-    # https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyB_VVeMFaOFWa9_AuOjHX-zy6N0Y9txPoE
+    for placeType in places:
+        type_urls = []
+        for place in places[placeType]:
+            image_url = "https://via.placeholder.com/150" # default image
+            if "photos" in place.keys():
+                photoreference = place["photos"][0]["photo_reference"]
+                image_url = f"https://maps.googleapis.com/maps/api/place/photo?maxwidth={maxwidth}&photoreference={photoreference}&key={key}"
+            type_urls.append(image_url)
+        photos.update({placeType: type_urls})
+    
+    return photos

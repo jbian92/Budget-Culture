@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request, redirect, url_for, session
 from datetime import datetime
-from model import getPlaces
+from model import getPlaces, getPhotos
 #import os
 
 
@@ -48,13 +48,13 @@ def home():
 
 @app.route('/homepage')
 def homepage():
-    set_carvars()
+    set_genre_vars()
     places = getPlaces(types, app.config['PLACES_KEY'])
-    print(places)
+    photos = getPhotos(places, app.config['PLACES_KEY'])
+    
+    return render_template('homepage.html', genres = genres, types = types, places = places, photos = photos, time = datetime.now())
 
-    return render_template('homepage.html', genres = genres, types = types, places = places, time = datetime.now())
-
-def set_carvars():
+def set_genre_vars():
     for genre in genres:
         genres[genre]["carid"] = "carouselExampleControls" + str(types.index(genre))
         genres[genre]["carhref"] = "#carouselExampleControls" + str(types.index(genre))
