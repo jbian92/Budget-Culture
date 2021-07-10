@@ -28,4 +28,4 @@ Users can...
 ![browsing page](browse.png)
 
 ## July 9, 2021 Update
-It has been a lot of fun creating this website together and learning about the world of web development. However, the FinTech Focus program has ended and there are now other new projects that we want to focus on. Thus, this repository will be archived from now on. 
+It has been a lot of fun creating this website together and learning about the world of web development. However, there are now other new projects that we want to focus on. Thus, this repository will be archived from now on. 
